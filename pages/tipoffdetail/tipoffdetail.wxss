@@ -1,0 +1,88 @@
+.form_class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form_title_blue{
+  background-color: rgb(51, 102, 153);
+  width: 100%;
+  height: 40rpx;
+}
+
+.form_title_white{
+  background-color: #fff;
+  width: 100%;
+  height: 30rpx;
+}
+
+.text_title{
+  background-color:RGB(1,88,188);
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  line-height: 2;
+  font-size: 12px;
+}
+
+.cont{
+  width: 700rpx;
+  margin: 5rpx;
+}
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th1 {
+  width: 15%;
+  justify-content: left;
+  background: rgb(236, 244, 247);
+  color: #000;
+  display: flex;
+  height: 18px;
+  align-items: center;
+  border: 1px solid RGB(155, 208, 248);
+  font-size: 10px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.th{
+  width: 35%;
+  border: 1px solid RGB(155, 208, 248);
+  height: 18px;
+  font-weight: bold;
+}
+
+input{
+  /* border: 1px solid rgb(175, 163, 163); */
+  /* margin-top: 2px; */
+  height: 20px;
+  min-height: 20px;
+  font-size: 10px;
+  margin-top: -5px;
+}
+
+.form_title_white1{
+  background-color: #fff;
+  width: 100%;
+  height: 20px;
+}
+
+.tipoffbtn{
+  color:#fff;
+  background-color:rgb(51, 102, 153);
+  width:400rpx;
+  border-radius:10px;
+  margin-top:40rpx;
+  margin-bottom:5rpx;
+}
+

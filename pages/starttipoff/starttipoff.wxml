@@ -1,0 +1,48 @@
+<view class="containe">
+  <view class="logo-head" >
+    <image src="../../images/logo.png" mode='widthFix' style='width:100%;'></image>
+  </view>
+  <view class="picture-head" style='width=100%'>
+    <image src="../../images/1.jpg" mode='widthFix' style='width:100%;'></image>
+  </view>
+  <form bindsubmit="MyfromSubmit" report-submit="true">
+    <view class="form-head">
+    <label> 网上举报须知</label>
+    </view>
+    <text> \n </text>
+    <view class="form-text">
+      <label>一、纪检监察机关举报网站受理范围：</label>
+    </view>
+    <view class="form-text">
+      <label>1. 对党组织、党员违反政治纪律、组织纪律、廉洁纪律、群众纪律、工作纪律、生活纪律等党的纪律行为的检举控告。</label>
+    </view>
+    <view class="form-text">
+      <label>2. 对监察对象（监察法规定的六类公职人员，下同）不依法履职，违反秉公用权、廉洁从政从业以及道德操守等规定，涉嫌贪污贿赂、滥用职权、玩忽职守、权力寻租、利益输送、徇私舞弊以及浪费国家资财等职务违法犯罪行为的检举控告。</label>
+    </view>
+    <view class="form-text">
+      <label>3. 党员对党纪处分或者纪律检查机关所作的其他处理不服，提出的申诉。</label>
+    </view>
+    <view class="form-text">
+      <label>4. 监察对象对监察机关涉及本人的处理决定不服，提出的申诉；被调查人及其近亲属对监察机关及其工作人员违反法律法规、侵害被调查人合法权益的行为，提出的申诉。</label>
+    </view>
+    <view class="form-text">
+      <label>5. 对原行政监察机关作出的政纪处分和其他处理决定不服未超过申请期限，提出的申诉。</label>
+    </view>
+    <view class="form-text">
+      <label>6. 对党风廉政建设和反腐败工作的批评建议。</label>
+    </view>
+    <view class="form-text">
+      <label>二、纪检监察机关提倡实名举报（请填写真实姓名、身份证号和准确联系方式等内容）。</label>
+    </view>
+    <text> \n </text>
+    <view class="check-box" style='margin-bottom:15px;margin-left:8px;'>
+        <checkbox id="check1" name="check1" checked="{{term_checked}}" bindtap="onCheckboxChanged">我已阅读以上条款</checkbox>
+    </view>
+    <view class='hr'></view>
+    <view class="btn-area flex-wrp">
+      <button class="button1" bindtap="gototipoffformpageWithoutName">匿名举报</button>
+      <button class="button1" bindtap="gototipoffformpageWithName">实名举报</button>
+    </view>
+  
+  </form>
+</view>

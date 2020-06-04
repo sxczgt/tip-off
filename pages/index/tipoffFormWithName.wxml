@@ -1,0 +1,170 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+	<view class="form_title_blue"></view>
+	<view class="form_title_white"></view>
+	<!-- 第一个表格填写举报人信息 -->
+	<view class="form_class">
+		<view class='cont'>
+			<view class='text_title'>举报人信息（注意:标有
+				<text style='color:red'>*</text>的必须填写）</view>
+			<view class="table">
+				<view class="tr bg-w">
+					<view class="th1">反映时间</view>
+					<view class="th">
+						<input name="reportTime" type='text' value="{{time}}" disabled="disabled"></input>
+
+					</view>
+
+					<view class="th1">举报人
+						<view wx:if="{{nameFlag==1}}">
+							<text style='color:red;'>*</text>
+						</view>
+
+					</view>
+					<view class="th ">
+						<input name="reporterName" value="{{report.reporterName}}" bindinput="reporterNameInput"></input>
+					</view>
+				</view>
+
+
+				<view class="tr bg-w">
+					<view class="th1">性别</view>
+					<view class="th">
+						<picker mode="selector" value="{{indexGender}}" range="{{arrayGender}}" bindchange="bindGenderChange">
+							<view class="picker">
+								<input name="reporterGender" type='text' value="{{arrayGender[indexGender]}}"></input>
+							</view>
+						</picker>
+					</view>
+					<view class="th1">身份证号</view>
+					<view class="th ">
+						<input name="reporterIdNumber" value="{{report.reporterIdNumber}}"></input>
+					</view>
+				</view>
+				<view class="tr bg-w">
+					<view class="th1">联系方式</view>
+					<view class="th">
+						<input name="reporterPhone" value="{{report.reporterPhone}}"></input>
+					</view>
+					<view class="th1">政治面貌</view>
+					<view class="th">
+						<picker mode="selector" value="{{indexPolitic}}" range="{{arrayPolitic}}" bindchange="bindPoliticChange">
+							<view class="picker">
+								<input name="reporterPolitic" type='text' value="{{arrayPolitic[indexPolitic]}}"></input>
+
+							</view>
+						</picker>
+					</view>
+				</view>
+				<view class="tr bg-w">
+					<view class="th1">工作单位</view>
+					<view class="th">
+						<input name="reporterCompany" value="{{report.reporterCompany}}"></input>
+					</view>
+					<view class="th1">职务</view>
+					<view class="th ">
+						<input name="reporterPosition" value="{{report.reporterPosition}}"></input>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="form_title_white1"></view>
+		<!-- 第二个表格填写被举报人信息 -->
+		<view class='cont'>
+			<view class='text_title'>被举报人信息（注意:标有
+				<text style='color:red'>*</text>的必须填写）</view>
+			<view class="table">
+				<view class="tr bg-w">
+					<view class="th1">被举报人
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th">
+						<input type='text' name="reportedName" value="{{report.reportedName}}" bindinput="reportedNameInput"></input>
+					</view>
+					<view class="th1">性别
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th ">
+						<picker mode="selector" value="{{indexGender1}}" range="{{arrayGender}}" bindchange="bindGenderChange1">
+							<view class="picker">
+								<input name="reportedGender" type='text' value="{{arrayGender[indexGender1]}}" bindinput="genderInput"></input>
+							</view>
+						</picker>
+						<!-- <input name="reportedGender" value="{{report.reporterGender}}" bindinput="genderInput"></input> -->
+					</view>
+				</view>
+				<view class="tr bg-w">
+					<view class="th1">政治面貌
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th">
+						<picker mode="selector" value="{{indexPolitic1}}" range="{{arrayPolitic}}" bindchange="bindPoliticChange1">
+							<view class="picker">
+								<input name="reportedPolitic" type='text' value="{{arrayPolitic[indexPolitic1]}}" bindinput="politicInput"></input>
+							</view>
+						</picker>
+						<!-- <input name="reportedPolitic" value="{{report.reportedPolitic}}" bindinput="politicInput"></input> -->
+					</view>
+					<view class="th1">单位
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th ">
+						<input name="reportedCompany" value="{{report.reportedCompany}}" bindinput="companyInput"></input>
+					</view>
+				</view>
+				<view class="tr bg-w">
+					<view class="th1">职务
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th">
+						<input name="reportedPosition" value="{{report.reportedPosition}}" bindinput="positionInput"></input>
+					</view>
+					<view class="th1">级别
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th">
+						<picker mode="selector" value="{{indexLevel}}" range="{{arrayLevel}}" bindchange="bindLevelChange">
+							<view class="picker">
+								<input name="reportedLevel" type='text' value="{{arrayLevel[indexLevel]}}" bindinput="levelInput"></input>
+
+							</view>
+						</picker>
+						<!-- <input name="reportedLevel" value="{{report.reportedLevel}}" bindinput="levelInput"></input> -->
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="form_title_white1"></view>
+		<!-- 第三个表格填写举报正文 -->
+		<view class='cont'>
+			<view class='text_title'>举报正文（注意:标有
+				<text style='color:red'>*</text>的必须填写）</view>
+			<view class="table">
+				<view class="tr bg-w" style='width:100%'>
+					<view class="th1" style='width:15%'>标题</view>
+					<view class="th" style='width:85%'>
+						<input type='text' name="reportTitle" value="{{report.reportTitle}}"></input>
+					</view>
+				</view>
+				<view class="tr bg-w">
+					<view class="th1" style='width:15%;height:200px;'>主要问题
+						<text style='color:red;'>*</text>
+					</view>
+					<view class="th" style='width:85%;height:200px;'>
+						<textarea style='width:85%;height:200px;font-size:10px;' name="reportProblem" value="{{report.reportProblem}}" bindinput="problemInput"></textarea>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="btn-area" style="display:{{isDetails}}">
+			<button class='tipoffbtn' formType="submit">
+				<text decode="{{true}}">提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</text>
+			</button>
+			<!-- <button formType="reset">重置</button> -->
+		</view>
+	</view>
+</form>
+
+<!-- <button class='tipoffbtn' >
+  <text decode="{{true}}">提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</text>
+</button> -->

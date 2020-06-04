@@ -1,0 +1,18 @@
+.tipoffbtn{
+  color:#fff;
+  background-color:RGB(234,95,64);
+  width:500rpx;
+  border-radius:40rpx;
+  margin-top:50rpx;
+  margin-bottom:50rpx;
+}
+
+.tipoffinfo{
+  color:#fff;
+  background-color:RGB(104,186,246);
+  width:500rpx;
+  border-radius:40rpx;
+  margin-top:120rpx;
+  margin-bottom:50rpx;
+}
+

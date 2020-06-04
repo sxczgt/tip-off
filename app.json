@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/clicktipoff/clicktipoff",
+    "pages/starttipoff/starttipoff",
+    "pages/tipofflist/tipofflist",
+    "pages/tipoffform/tipoffform",
+    "pages/tipoffdetail/tipoffdetail",
+    "pages/index/tipoffFormWithName"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "sitemapLocation": "sitemap.json",
+  "debug": false
+}
