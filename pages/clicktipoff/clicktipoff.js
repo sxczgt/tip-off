@@ -67,36 +67,40 @@ Page({
 
   gotostarttipoffpage: function() {
     console.log(app.globalData.userInfo)
-    wx.request({
-      url: app.globalData.host + '/demo/report/limitReport?userInfo=' + app.globalData.userInfo.nickName,
-      method: 'POST',
-      header: {
-        // "Content-Type": "application/x-www-form-urlencoded" // 默认值
-        "Content-Type": "application/json;charset=UTF-8"
-      },
-      success: function(res) {
-        if(res.data == true){
-          wx.navigateTo({
-            url: '/pages/starttipoff/starttipoff',
-          })
-        }else{
-          wx.showToast({
-            title: '每天仅限举报一次!',
-            icon: 'none',
-            duration: 2000,
-
-          })
-        }
-      },
-      fail: function(){
-        wx.showToast({
-          title: '调用失败！',
-          icon: 'none',
-          duration: 2000,
-        })
-      }
-      
+    console.log(app.globalData)
+    wx.navigateTo({
+      url: '/pages/starttipoff/starttipoff',
     })
+    // wx.request({
+    //   url: app.globalData.host + '/demo/report/limitReport?userInfo=' + app.globalData.userInfo.nickName,
+    //   method: 'POST',
+    //   header: {
+    //     // "Content-Type": "application/x-www-form-urlencoded" // 默认值
+    //     "Content-Type": "application/json;charset=UTF-8"
+    //   },
+    //   success: function(res) {
+    //     if(res.data == true){
+    //       wx.navigateTo({
+    //         url: '/pages/starttipoff/starttipoff',
+    //       })
+    //     }else{
+    //       wx.showToast({
+    //         title: '每天仅限举报一次!',
+    //         icon: 'none',
+    //         duration: 2000,
+
+    //       })
+    //     }
+    //   },
+    //   fail: function(){
+    //     wx.showToast({
+    //       title: '调用失败！',
+    //       icon: 'none',
+    //       duration: 2000,
+    //     })
+    //   }
+      
+    // })
     
   },
 

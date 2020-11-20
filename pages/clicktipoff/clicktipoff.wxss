@@ -5,6 +5,7 @@
   border-radius:40rpx;
   margin-top:50rpx;
   margin-bottom:50rpx;
+  float: left;
 }
 
 .tipoffinfo{
@@ -15,4 +16,6 @@
   margin-top:120rpx;
   margin-bottom:50rpx;
 }
-
+.background{
+  background-repeat: repeat;
+}
