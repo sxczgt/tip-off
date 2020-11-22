@@ -13,12 +13,12 @@
 					<view class="th">
 						<input name="reportTime" type='text' value="{{time}}" disabled="disabled"></input>
 					</view>
-					<view class="th1">举报人</view>
+					<!-- <view class="th1">举报人</view>
 					<view class="th ">
 						<input name="reporterName" value="{{report.reporterName}}" bindinput="reporterNameInput"></input>
-					</view>
+					</view> -->
 				</view>
-				<view class="tr bg-w">
+				<!-- <view class="tr bg-w">
 					<view class="th1">性别</view>
 					<view class="th">
 						<picker value="{{indexGender}}" range="{{arrayGender}}" bindchange="bindGenderChange">
@@ -31,13 +31,9 @@
 					<view class="th ">
 						<input name="reporterIdNumber" value="{{report.reporterIdNumber}}"></input>
 					</view>
-				</view>
+				</view> -->
 				<view class="tr bg-w">
-					<view class="th1">联系方式</view>
-					<view class="th">
-						<input name="reporterPhone" value="{{report.reporterPhone}}"></input>
-					</view>
-					<view class="th1">政治面貌</view>
+					<view class="th1">举报类型<text style='color:red'>*</text></view>
 					<view class="th">
 						<picker mode="selector" value="{{indexPolitic}}" range="{{arrayPolitic}}" bindchange="bindPoliticChange">
 							<view class="picker">
@@ -47,20 +43,42 @@
 					</view>
 				</view>
 				<view class="tr bg-w">
-					<view class="th1">工作单位</view>
+					<view class="th1">联系人电话<text style='color:red'>*</text></view>
+					<view class="th">
+						<input name="reporterPhone" bindinput="reporterPhoneInput" value="{{report.reporterPhone}}"></input>
+					</view>
+					<!-- <view class="th1">政治面貌</view>
+					<view class="th">
+						<picker mode="selector" value="{{indexPolitic}}" range="{{arrayPolitic}}" bindchange="bindPoliticChange">
+							<view class="picker">
+								<input name="reporterPolitic" type='text' value="{{arrayPolitic[indexPolitic]}}"></input>
+							</view>
+						</picker>
+					</view> -->
+				</view>
+				<view class="tr bg-w">
+					<!-- <view class="th1">工作单位</view>
 					<view class="th">
 						<input name="reporterCompany" value="{{report.reporterCompany}}"></input>
 					</view>
 					<view class="th1">职务</view>
 					<view class="th ">
 						<input name="reporterPosition" value="{{report.reporterPosition}}"></input>
+					</view> -->
+					<view class="th1">联系人姓名</view>
+					<view class="th ">
+						<input name="reporterName" value="{{report.reporterName}}" bindinput="reporterNameInput"></input>
 					</view>
+				</view>
+				<!-- 文件上传 -->
+				<view class="container">
+ 				 <button bindtap='chooseImageTap'>上传图片</button>
 				</view>
 			</view>
 		</view>
 		<view class="form_title_white1"></view>
 		<!-- 第二个表格填写被举报人信息 -->
-		<view class='cont'>
+		<!-- <view class='cont'>
 			<view class='text_title'>被举报人信息（注意:标有
 				<text style='color:red'>*</text>的必须填写）</view>
 			<view class="table">
@@ -80,7 +98,7 @@
 								<input name="reportedGender" type='text' value="{{arrayGender[indexGender1]}}" bindinput="genderInput"></input>
 							</view>
 						</picker>
-						<!-- <input name="reportedGender" value="{{report.reporterGender}}" bindinput="genderInput"></input> -->
+						<input name="reportedGender" value="{{report.reporterGender}}" bindinput="genderInput"></input>
 					</view>
 				</view>
 				<view class="tr bg-w">
@@ -94,7 +112,7 @@
 
 							</view>
 						</picker>
-						<!-- <input name="reportedPolitic" value="{{report.reportedPolitic}}" bindinput="politicInput"></input> -->
+						<input name="reportedPolitic" value="{{report.reportedPolitic}}" bindinput="politicInput"></input>
 					</view>
 					<view class="th1">单位
 						<text style='color:red;'>*</text>
@@ -119,25 +137,25 @@
 								<input name="reportedLevel" type='text' value="{{arrayLevel[indexLevel]}}" bindinput="levelInput"></input>
 							</view>
 						</picker>
-						<!-- <input name="reportedLevel" value="{{report.reportedLevel}}" bindinput="levelInput"></input> -->
+						<input name="reportedLevel" value="{{report.reportedLevel}}" bindinput="levelInput"></input>
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		<view class="form_title_white1"></view>
 		<!-- 第三个表格填写举报正文 -->
 		<view class='cont'>
 			<view class='text_title'>举报正文（注意:标有
 				<text style='color:red'>*</text>的必须填写）</view>
 			<view class="table">
-				<view class="tr bg-w" style='width:100%'>
+				<!-- <view class="tr bg-w" style='width:100%'>
 					<view class="th1" style='width:15%'>标题</view>
 					<view class="th" style='width:85%'>
 						<input type='text' name="reportTitle" value="{{report.reportTitle}}"></input>
 					</view>
-				</view>
+				</view> -->
 				<view class="tr bg-w">
-					<view class="th1" style='width:15%;height:200px;'>主要问题
+					<view class="th1" style='width:15%;height:200px;'>情况描述
 						<text style='color:red;'>*</text>
 					</view>
 					<view class="th" style='width:85%;height:200px;'>

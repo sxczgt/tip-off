@@ -1,6 +1,6 @@
 <view class="containe">
   <view class="logo-head" >
-    <image src="../../images/logo.png" mode='widthFix' style='width:100%;'></image>
+    <image src="../../images/logo.jpg" mode='widthFix' style='width:100%;'></image>
   </view>
   <view class="picture-head" style='width=100%'>
     <image src="../../images/1.jpg" mode='widthFix' style='width:100%;'></image>
@@ -41,7 +41,7 @@
     <view class='hr'></view>
     <view class="btn-area flex-wrp">
       <button class="button1" bindtap="gototipoffformpageWithoutName">匿名举报</button>
-      <button class="button1" bindtap="gototipoffformpageWithName">实名举报</button>
+      <!-- <button class="button1" bindtap="gototipoffformpageWithName">实名举报</button> -->
     </view>
   
   </form>

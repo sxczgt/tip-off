@@ -42,7 +42,7 @@
   background: snow;
 }
 .th1 {
-  width: 15%;
+  width: 20%;
   justify-content: left;
   background: rgb(236, 244, 247);
   color: #000;
@@ -56,7 +56,7 @@
 }
 
 .th{
-  width: 35%;
+  width: 80%;
   border: 1px solid RGB(155, 208, 248);
   height: 18px;
   font-weight: bold;

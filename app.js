@@ -2,6 +2,10 @@
 App({
   onLaunch: function () {
     console.log(111)
+    wx.cloud.init({
+      env: 'sxczgt-d6vfq',
+      traceUser : true
+    })
     // 登录
     wx.login({
       success: res => {
