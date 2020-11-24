@@ -15,5 +15,10 @@
     "navigationBarBackgroundColor": "#fff"
   },
   "sitemapLocation": "sitemap.json",
-  "debug": false
+  "debug": false,
+  "permission":{
+    "scope.userLocation": {
+    "desc": "获取位置" 
+    }
+  }
 }

@@ -1,7 +1,17 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
 
 	<view class="form_title_blue"></view>
+	<!-- 地图组件 -->
+	<view>
+		<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" 
+			 show-location style="width: 100%; height: 300rpx;">
+		</map>
+	</view>
+	<view>
+		<button type="primary" bindtap="loadInfo">定位</button>
+	</view>
 	<view class="form_title_white"></view>
+
 	<!-- 第一个表格填写举报人信息 -->
 	<view class="form_class">
 		<view class='cont'>
@@ -9,14 +19,16 @@
 				<text style='color:red'>*</text>的必须填写）</view>
 			<view class="table">
 				<view class="tr bg-w">
+					<view class="th1">举报地点</view>
+					<view class="th">
+						<input name="reportLocation" type='text' value="{{location}}"></input>
+					</view>
+				</view>
+				<view class="tr bg-w">
 					<view class="th1">反映时间</view>
 					<view class="th">
 						<input name="reportTime" type='text' value="{{time}}" disabled="disabled"></input>
 					</view>
-					<!-- <view class="th1">举报人</view>
-					<view class="th ">
-						<input name="reporterName" value="{{report.reporterName}}" bindinput="reporterNameInput"></input>
-					</view> -->
 				</view>
 				<!-- <view class="tr bg-w">
 					<view class="th1">性别</view>
@@ -71,8 +83,8 @@
 					</view>
 				</view>
 				<!-- 文件上传 -->
-				<view class="container">
- 				 <button bindtap='chooseImageTap'>上传图片</button>
+				<view class="form_title_white1">
+					<button bindtap='chooseImageTap'>上传图片</button>
 				</view>
 			</view>
 		</view>
@@ -159,7 +171,8 @@
 						<text style='color:red;'>*</text>
 					</view>
 					<view class="th" style='width:85%;height:200px;'>
-						<textarea style='width:85%;height:200px;font-size:10px;' name="reportProblem" value="{{report.reportProblem}}" bindinput="problemInput"></textarea>
+						<textarea style='width:85%;height:200px;font-size:10px;' name="reportProblem"
+							value="{{report.reportProblem}}" bindinput="problemInput"></textarea>
 					</view>
 				</view>
 			</view>
