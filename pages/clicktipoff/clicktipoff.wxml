@@ -8,7 +8,7 @@
 
 		<block wx:if="{{hasUserInfo && canIUse}}">
 			<!-- <button class='tipoffinfo' bindtap="onReportList">查看举报</button> -->
-			<button class='tipoffbtn' bindtap="gotostarttipoffpage">我要举报 </button>
+			<button class='tipoffbtn' bindtap="gotostarttipoffpage">我要举报</button>
 		</block>
 		<block wx:else>
 			<button class='tipoffinfo' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录微信</button>
