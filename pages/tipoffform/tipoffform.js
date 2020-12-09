@@ -30,20 +30,6 @@ Page({
     phone: '',
     idNumber: '',
     nameFlag: null,
-    arrayGender: ['男', '女'],
-    objectArrayGender: [{
-        id: 0,
-        name: '男'
-
-      },
-      {
-        id: 1,
-        name: '女'
-      },
-
-    ],
-    indexGender: " ",
-    indexGender1: " ",
     arrayPolitic: ['农药', '种子', '肥料', '兽药', '农产品质量', '渔政', '其他'],
     objectArrayPolitic: [{
         id: 0,
@@ -74,23 +60,16 @@ Page({
         name: '其他'
       },
     ],
-    indexPolitic: " ",
-    indexPolitic1: " ",
-    arrayLevel: ['普通员工', '处科级', '厂局级', '不详'],
-    //防止多次提交
-    lock1: false,
     indexLevel: " ",
     reporterPolitic: '',
     reportProblem: '',
     reportLocation: '',
     imgs: [], //本地图片地址数组
-    picPaths: [], //网络路径
     tempFilePaths: [], //存储待上传图片的临时路径
     fileIDs: [], //存储返回的上传文件id
     //当前定位位置
     latitude: '',
     longitude: '',
-    location: '',
   },
   //获取当前位置的经纬度
   loadInfo: function () {
@@ -99,13 +78,19 @@ Page({
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度
       success: function (res) {
-        var latitude = res.latitude //维度
-        var longitude = res.longitude //经度
+        let latitude = res.latitude //维度
+        let longitude = res.longitude //经度
         wx.chooseLocation({
           latitude: latitude,
-          longitude: longitude //经度
+          longitude: longitude, //经度
+          success:function(res){
+            that.setData({
+              latitude: res.latitude,
+              longitude: res.longitude //经度
+            });
+            that.loadCity(res.latitude, res.longitude);
+          }
         })
-        that.loadCity(latitude, longitude);
       }
     })
   },
@@ -181,13 +166,16 @@ Page({
   // 图片本地路径
   chooseWxImage: function (type) {
     var that = this;
-    var imgsPaths = that.data.imgs;
     wx.chooseImage({
       sizeType: ['original', 'compressed'],
       sourceType: [type],
       success: function (res) {
+        that.data.tempFilePaths = that.data.tempFilePaths.concat(res.tempFilePaths);
+        console.log('图片路径')
+        console.log(res.tempFilePaths)
+        
         that.setData({
-          tempFilePaths: res.tempFilePaths
+          tempFilePaths: that.data.tempFilePaths
         });
       }
     })
@@ -235,6 +223,41 @@ Page({
         })
       },
       fail: console.error
+    })
+  },
+  /**
+   * 预览图片方法
+   */
+  listenerButtonPreviewImage: function (e) {
+    let index = e.target.dataset.index;
+    let that = this;
+    wx.previewImage({
+      current: that.data.tempFilePaths[index],
+      urls: that.data.tempFilePaths,
+    })
+  },
+  /**
+   * 长按删除图片
+   */
+  deleteImage: function (e) {
+    var that = this;
+    var tempFilePaths = that.data.tempFilePaths;
+    var index = e.currentTarget.dataset.index; //获取当前长按图片下标
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          tempFilePaths.splice(index, 1);
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+        that.setData({
+          tempFilePaths
+        });
+      }
     })
   },
   reporterNameInput: function (e) {
@@ -290,6 +313,7 @@ Page({
 
 
   formSubmit: function (e) {
+    showLoading("提交中"); 
     let that = this;
     var myregPhone = /^(((1[0-9]{10})))$/;
     var myregIdNumber = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
@@ -320,7 +344,7 @@ Page({
     //     icon: 'none',
     //     duration: 2000
     //   })
-    //   return false
+    //   return false 
     // }
     //数据请求操作
     rep.add({
@@ -331,7 +355,9 @@ Page({
         reporterPolitic: e.detail.value.reporterPolitic,
         reportProblem: e.detail.value.reportProblem,
         reportLocation: e.detail.value.reportLocation,
-        userInfo: app.globalData.userInfo.nickName
+        fileIDs:that.data.fileIDs,
+        longitude: e.detail.value.longitude,
+        latitude: e.detail.value.latitude
       },
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -339,6 +365,9 @@ Page({
         if(len == 0){
           wx.cloud.callFunction({
             name: 'sendEmail',
+            data:{
+              record_id:res._id
+            },
             success: function (res) {
               console.log("发送成功", res)
             },
@@ -351,6 +380,7 @@ Page({
           that.upImgs(that.data.tempFilePaths[i], i, res._id, len) //调用上传方法
 
         }
+        hideLoading()
         wx.showModal({
           title: '提示',
           content: '提交成功',
@@ -446,3 +476,36 @@ Page({
   },
 
 })
+
+function showLoading(message) {
+  if (wx.showLoading) {
+    // 基础库 1.1.0 微信6.5.6版本开始支持，低版本需做兼容处理
+    wx.showLoading({
+      title: message,
+      mask: true
+    });
+  } else {
+    // 低版本采用Toast兼容处理并将时间设为20秒以免自动消失
+    wx.showToast({
+      title: message,
+      icon: 'loading',
+      mask: true,
+      duration: 20000
+    });
+  }
+}
+
+function hideLoading() {
+  if (wx.hideLoading) {
+    // 基础库 1.1.0 微信6.5.6版本开始支持，低版本需做兼容处理
+    wx.hideLoading();
+  } else {
+    wx.hideToast();
+  }
+}
+
+
+　module.exports = {
+　　showLoading:showLoading,
+　　hideLoading:hideLoading
+　}
