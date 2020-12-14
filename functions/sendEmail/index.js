@@ -12,22 +12,18 @@ cloud.init({
 });
 
 const db = cloud.database();
+const _ = db.command;
 const reportCollection = db.collection('report');
+const configCollection = db.collection('config');
 const log = cloud.logger();
 
-// 创建一个SMTP客户端配置
-var config = {
-  host: 'smtp.qq.com', //网易163邮箱 smtp.163.com
-  port: 465, //网易邮箱端口 25
-  auth: {
-    user: '1014091930@qq.com', //邮箱账号
-    pass: 'tzzrxelzfkbtbahe' //邮箱的授权码
-  }
-};
-// 创建一个SMTP客户端对象
-var transporter = nodemailer.createTransport(config);
+
+
+
+
 // 云函数入口函数
 exports.main = async (event, context) => {
+ 
   var nowDate = new Date();
  
   var year = nowDate.getFullYear();
@@ -45,7 +41,7 @@ exports.main = async (event, context) => {
   try {
     //从云服务器上获取到一条举报记录
     var record = await report.get();
-    console.log(record)
+  
     let fileIDs = record.data.fileIDs;
     console.log(fileIDs)
     let tempFiles = [];
@@ -152,7 +148,25 @@ exports.main = async (event, context) => {
           text: '附件为举报上传图片', //可以是链接，也可以是验证码
           attachments: tempFiles
         };
-      transporter.sendMail(mail);
+        // 创建一个SMTP客户端配置
+        var config;
+        var transporter;
+        const configFromDb = configCollection.where({
+          type: _.eq('@qq.com')
+        }).get().then(res => {
+          config = {
+            host: res.data[0].host, //网易163邮箱 smtp.163.com
+            port: res.data[0].port, //网易邮箱端口 25
+            auth: {
+              user: res.data[0].user, //邮箱账号
+              pass: res.data[0].pass //邮箱的授权码
+            }
+          };
+   // 创建一个SMTP客户端对象
+          console.log(config)
+          transporter = nodemailer.createTransport(config);
+          transporter.sendMail(mail);
+        });
       },
       'error': function ( err ) {
         console.log ( err );
