@@ -1,0 +1,384 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210308.130438.6848.0.001.json",
+    "dumpEventTime": "2021-03-08T13:04:38Z",
+    "dumpEventTimeStamp": "1615179878616",
+    "processId": 6848,
+    "cwd": "D:\\wechat_program\\tip-off\\functions\\sendEmail",
+    "commandLine": [
+      "D:\\微信小程序\\微信web开发者工具\\node.exe",
+      "D:\\微信小程序\\微信web开发者工具\\code\\package.nw\\js\\common\\cloud-functions-debugger-server\\worker\\node.js"
+    ],
+    "nodejsVersion": "v12.6.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.6.0",
+      "v8": "7.5.288.22-node.14",
+      "uv": "1.30.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.38.0",
+      "napi": "4",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.6.0/node-v12.6.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.6.0/node-v12.6.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.6.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+        "speed": 3192,
+        "user": 1282843,
+        "nice": 0,
+        "sys": 4354828,
+        "idle": 868670875,
+        "irq": 1753625
+      }
+    ],
+    "host": "DSXCZ19275228"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff62a1b6db9",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a1ba72c",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a1b96d8",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a2a300b",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62aa88a1e",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62aa70d6a",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a90256c",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a90a49f",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a900733",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a8fefc4",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a91daa5",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62a6d3e0d",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff62ab3170d",
+      "symbol": ""
+    },
+    {
+      "pc": "0x0000011016fc8b0e",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 139685888,
+    "totalCommittedMemory": 139685888,
+    "usedMemory": 134772904,
+    "availableMemory": 2063482520,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261832,
+        "used": 31960,
+        "available": 229872
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1048576,
+        "capacity": 1047328,
+        "used": 1047312,
+        "available": 16
+      },
+      "old_space": {
+        "memorySize": 109457408,
+        "committedMemory": 109457408,
+        "capacity": 109205152,
+        "used": 106094472,
+        "available": 3110680
+      },
+      "code_space": {
+        "memorySize": 1474560,
+        "committedMemory": 1474560,
+        "capacity": 1322080,
+        "used": 1246976,
+        "available": 75104
+      },
+      "map_space": {
+        "memorySize": 2363392,
+        "committedMemory": 2363392,
+        "capacity": 2359712,
+        "used": 1469600,
+        "available": 890112
+      },
+      "large_object_space": {
+        "memorySize": 25030656,
+        "committedMemory": 25030656,
+        "capacity": 24879128,
+        "used": 24879128,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3456,
+        "used": 3456,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047328,
+        "used": 0,
+        "available": 1047328
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 8.421,
+    "kernelCpuSeconds": 2.718,
+    "cpuConsumptionPercent": 0.233718,
+    "maxRss": 160301056,
+    "pageFaults": {
+      "IORequired": 140465,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 7592,
+      "writes": 456
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Administrator",
+    "HTTP_PROXY": "http://127.0.0.1:64953",
+    "LOGONSERVER": "\\\\DSXCZ19275228",
+    "NODE_PATH": "D:\\wechat_program\\tip-off\\functions\\sendEmail",
+    "PATH": "C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;",
+    "SYSTEMDRIVE": "C:",
+    "SYSTEMROOT": "C:\\WINDOWS",
+    "TCB_CONTEXT_KEYS": "TCB_ENV",
+    "TCB_ENV": "local",
+    "TCB_SOURCE": "wx_client",
+    "TEMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+    "TENCENTCLOUD_RUNENV": "WX_LOCAL_SCF",
+    "TENCENTCLOUD_SECRETID": "AKIDPgVrM0kZ_ePyVTb-Wye7irlPOW5Qs76E_NN4i8nqpqdq2kGWiyb3wFM6jaC8ZxB9",
+    "TENCENTCLOUD_SECRETKEY=nDSle0ZWINa3606zTkyKs/doJNJVSLc1kJZFZGLSRPk": "",
+    "TENCENTCLOUD_SESSIONTOKEN": "PkG1yEj1HliNjVriajx21znbM02YIcCa3624e77ceb29473f70f25c77fdb9487fjJ8eYPrtXL5KXBQql25n1pU2Qq7chOC6Uhko1PDJFimHRw7_0Bm6z8UsysBIgQADHKqUl2wK8XLmp6tfuHFkicfX-BMmLkI4S-Kh8xBSiezSgUaIGSWxaS_ZZJB5UItaObH4uOimi9Wo9b-QlvNrFoVQAVxxnwvKLuELIiq8vX8PTQXhGFY83YIUOPTwjp9nijd6yaDSWm-t39y6z6WT9BYnm-WtkNeQWIORr2BBI-H0jTQUA5gkH4jqffyZ77hkyANygI3kZ72NrI6Kv8RIgnrX0yH6opcxsxCdWjAR3cLx7lV-6rFbHTGJTe5V42Zd_HxM29R7gM3D_2wnZmQRaZgfZrgDqyiR1qV1MVtZ8XA",
+    "USERDOMAIN": "DSXCZ19275228",
+    "USERNAME": "Administrator",
+    "USERPROFILE": "C:\\Users\\Administrator",
+    "WINDIR": "C:\\WINDOWS",
+    "WX_API_TOKEN=eyJWZXJzaW9uIjoxLCJLZXlWZXJzaW9uIjoxNDQsImV2ZW50SWQiOiJIQ0pEdW1IcFJ1Q1pwTmI1V21BdXI2czEwRTJtOHBvaUViTW5sS2l6MVBRbXR5RXhSQTRPX1pKZ09icUx2RzlQRzVWWmhVN0Q3QSIsInRpY2tldCI6IkNJUUJFb0FDU2Z1VC9aa0VDQnVNeDEyVHlLMFJ6UFZJanlPL3h3cFAxS2xjaXVnN2UwWVB3YlVOWnp5clQ3OUtWb3p2WW1yR1NZM09JUElORXpzcGN2WFVCUW93Rjg5TlN5OW9NWGVMTXk1TnpqNVVIOVp3S1UzZUZEWXl6VEluVGRJS0VwMk1IU0d1QThicUtXQ2ZFZEhGM01sc3FURmE4QU11Ui94T2hjQzFCeGxRR3BuR1FyZm1haTVKS3plU0xwU2lJS1pzVmh5ZmVUY3cvNlF1L2QxYWYyMi9ENC9hc0pHaTVYcEthNHdlZ3Q2dStnYkFBaHRPaFBBL1dUVCtjUEoxdnhweGx0U0tYM2l6YUVzVGF4QlQ1VXIvVnlQTkxGTjVLNWJzU29DeVRWaEsyTDNBemVGKzVZdnpJK1ZaYkJNaVRVc2FhWG13c3FqU0I3TitZL3YyMnNEdGVpQUEiLCJFbmNyeXB0QWxnbyI6IkVOQ1JZUFRfQUxHT19BRVNfQ0dNIiwiRW5jcnlwdEtleSI6IlJmWUplMGZQTnlaVTl2NnhtMUZGUWlsVDdsMnNlNWpaSFBPekFkMXJORnc9In0": "",
+    "WX_APPID": "wxfd58712aecfe4aea",
+    "WX_CLIENTIP": "111.53.101.71",
+    "WX_CLIENTIPV6": "::ffff:111.53.101.71",
+    "WX_CONTEXT_KEYS": "WX_APPID",
+    "WX_OPENID": "oLtj80I5jo5WGPuyi6BL9nCRTu5M",
+    "__CF_ENV_INIT_TIME": "Mon Mar 08 2021 11:45:13 GMT+0800 (中国标准时间)",
+    "__CF_ENV_REFRESH_TIME": "Mon Mar 08 2021 13:03:14 GMT+0800 (GMT+08:00)"
+  },
+  "sharedObjects": [
+    "D:\\微信小程序\\微信web开发者工具\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll"
+  ]
+}

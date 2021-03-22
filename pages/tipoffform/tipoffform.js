@@ -70,6 +70,8 @@ Page({
     //当前定位位置
     latitude: '',
     longitude: '',
+    //行政区，用于区分邮件发送标的
+    area :'',
   },
   //获取当前位置的经纬度
   loadInfo: function () {
@@ -103,11 +105,18 @@ Page({
     myAmapFun.getRegeo({
       location: '' + longitude + ',' + latitude + '', //location的格式为'经度,纬度'
       success: function (data) {
+        console.log(data);
         that.setData({
-          reportLocation: data[0].name
+          reportLocation: data[0].name,
+          //设置行政区
+          area:data[0].regeocodeData.addressComponent.district,
         })
       },
-      fail: function (info) {}
+      fail: function (info) {
+        wx.showToast({
+          title: info,
+        })
+      }
     });
 
     myAmapFun.getWeather({
@@ -139,7 +148,7 @@ Page({
       success: function (res) {
         that.setData({
           latitude: res.latitude,
-          longitude: res.longitude //经度
+          longitude: res.longitude, //经度
         });
         that.loadCity(res.latitude, res.longitude);
       }
@@ -222,7 +231,14 @@ Page({
           }
         })
       },
-      fail: console.error
+      fail: function(){
+        wx.showToast({
+          title: '图片上传出现错误，请联系管理员',
+          icon: 'none',
+          duration: 2000
+        })
+        return false
+      }
     })
   },
   /**
@@ -357,7 +373,8 @@ Page({
         reportLocation: e.detail.value.reportLocation,
         fileIDs:that.data.fileIDs,
         longitude: e.detail.value.longitude,
-        latitude: e.detail.value.latitude
+        latitude: e.detail.value.latitude,
+        area: that.data.area
       },
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

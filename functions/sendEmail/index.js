@@ -44,6 +44,7 @@ exports.main = async (event, context) => {
   
     let fileIDs = record.data.fileIDs;
     console.log(fileIDs)
+    //附件数组
     let tempFiles = [];
     if(fileIDs.length>0){
       const result = await cloud.getTempFileURL({
@@ -135,19 +136,38 @@ exports.main = async (event, context) => {
           filename: 'report.docx',
           path: '/tmp/'+record.data._id+'.docx'
         })
-       // 创建一个邮件对象
+       
+        //  configCollection.where({type:_.eq('@qq.com')}).get({
+        //   success: function(res) {
+        //     // res.data 包含该记录的数据
+        //     console.log(res.data)
+        //     to = to.concat(res.data[0].email);
+        //   }
+        // });
+      //   configCollection.where({area:_.eq(record.data.area)}).get().then(res => {
+      //     to = to.concat(';',res.data[0].email);
+      // });
+      // 创建一个邮件对象
+      var to = '';
+      //从数据库获取发件对象email
+      console.log('开始获取email')
+      configCollection.where({
+        area: _.eq(''+record.data.area)
+      }).get().then(res => {
+        to = to.concat(res.data[0].email);
         var mail = {
           // 发件人
-          from: '来自郭涛 <1014091930@qq.com>',
+          from: '<1014091930@qq.com>',
           // 主题
           subject: '测试举报邮件发送',
           // 收件人
-          // to: '1014091930@qq.com',
-          to: '377591031@qq.com;1014091930@qq.com',
+           to: to,
+          //to: '377591031@qq.com;1014091930@qq.com',
           // 邮件内容，text或者html格式
           text: '附件为举报上传图片', //可以是链接，也可以是验证码
           attachments: tempFiles
         };
+      });
         // 创建一个SMTP客户端配置
         var config;
         var transporter;
@@ -163,7 +183,7 @@ exports.main = async (event, context) => {
             }
           };
    // 创建一个SMTP客户端对象
-          console.log(config)
+          console.log(mail)
           transporter = nodemailer.createTransport(config);
           transporter.sendMail(mail);
         });
