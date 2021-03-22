@@ -137,24 +137,19 @@ exports.main = async (event, context) => {
           path: '/tmp/'+record.data._id+'.docx'
         })
        
-        //  configCollection.where({type:_.eq('@qq.com')}).get({
-        //   success: function(res) {
-        //     // res.data 包含该记录的数据
-        //     console.log(res.data)
-        //     to = to.concat(res.data[0].email);
-        //   }
-        // });
-      //   configCollection.where({area:_.eq(record.data.area)}).get().then(res => {
-      //     to = to.concat(';',res.data[0].email);
-      // });
       // 创建一个邮件对象
       var to = '';
       //从数据库获取发件对象email
-      console.log('开始获取email')
+      console.log('开始获取email，地点为：'+record.data.area);
       configCollection.where({
         area: _.eq(''+record.data.area)
       }).get().then(res => {
-        to = to.concat(res.data[0].email);
+        if(0 == res.data.length){
+          console.log('获取到的发送邮件为空，添加默认值')
+          to = 'nyzf3701001@163.com;1014091930@qq.com'
+        }else{
+          to = to.concat(res.data[0].email);
+        }
         var mail = {
           // 发件人
           from: '<1014091930@qq.com>',
@@ -167,7 +162,6 @@ exports.main = async (event, context) => {
           text: '附件为举报上传图片', //可以是链接，也可以是验证码
           attachments: tempFiles
         };
-      });
         // 创建一个SMTP客户端配置
         var config;
         var transporter;
@@ -187,6 +181,7 @@ exports.main = async (event, context) => {
           transporter = nodemailer.createTransport(config);
           transporter.sendMail(mail);
         });
+      });
       },
       'error': function ( err ) {
         console.log ( err );
