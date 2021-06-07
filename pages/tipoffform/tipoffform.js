@@ -60,6 +60,7 @@ Page({
         name: '其他'
       },
     ],
+    reporterPhone:'',
     indexLevel: " ",
     reporterPolitic: '',
     reportProblem: '',
@@ -334,9 +335,9 @@ Page({
     var myregPhone = /^(((1[0-9]{10})))$/;
     var myregIdNumber = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
     if (
-      that.data.reporterPolitic.length == 0 ||
       that.data.reportLocation.length == 0 ||
-      that.data.reportProblem.length == 0) {
+      that.data.reportProblem.length == 0 ||
+      that.data.reporterPhone.length == 0) {
       wx.showToast({
         title: '必填字段不能为空！',
         icon: 'none',
@@ -345,7 +346,7 @@ Page({
       return false;
     }
     // 验证手机号是否正确
-    if (that.data.reporterPhone.length != 0 && !myregPhone.test(that.data.reporterPhone)) {
+    if (!myregPhone.test(that.data.reporterPhone)) {
       wx.showToast({
         title: '手机号有误！',
         icon: 'none',
@@ -368,7 +369,6 @@ Page({
         reportTime: that.data.time,
         reporterName: e.detail.value.reporterName,
         reporterPhone: e.detail.value.reporterPhone,
-        reporterPolitic: e.detail.value.reporterPolitic,
         reportProblem: e.detail.value.reportProblem,
         reportLocation: e.detail.value.reportLocation,
         fileIDs:that.data.fileIDs,
@@ -456,14 +456,14 @@ Page({
     })
   },
 
-  bindPoliticChange: function (e) {
-    let that = this;
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      indexPolitic: e.detail.value,
-      reporterPolitic: that.data.arrayPolitic[e.detail.value]
-    })
-  },
+  // bindPoliticChange: function (e) {
+  //   let that = this;
+  //   console.log('picker发送选择改变，携带值为', e.detail.value)
+  //   this.setData({
+  //     indexPolitic: e.detail.value,
+  //     reporterPolitic: that.data.arrayPolitic[e.detail.value]
+  //   })
+  // },
 
   bindGenderChange1: function (e) {
     var that = this;

@@ -79,44 +79,45 @@ exports.main = async (event, context) => {
     });
     pObj = docx.createP()
     pObj.addLineBreak();
-    pObj = docx.createP()
-    pObj.addText('编号: '+ dateStr +"  (           号)");
+    // pObj = docx.createP()
+    // pObj.addText('编号: '+ dateStr +"  (           号)");
     pObj = docx.createP()
     pObj.addLineBreak();
 
     var table = [
 
-      ['举报人',record.data.reporterName,'举报日期',record.data.reportTime],
-      ['电话',record.data.reporterPhone,'违法行为发生经纬度',['经度：'+record.data.longitude, '纬度：'+record.data.latitude]],
-      ['违法行为发生地',record.data.reportLocation,'',''],
-      ['举报材料','一份','图片',fileIDs.length+' 张'],
-      ['举报内容',['举报类型：'+record.data.reporterPolitic,record.data.reportProblem],'',''],
-      ['受理机构','案件受理科','受理日期',''],
-      ['案件受理科意见','','',''],
-      ['分管队长意见','','',''],
-      ['现场核查情况',['现场核查日期：     年    月    日 至       年    月    日 ', '附核查材料：     件     页    份（照片或图件     张）'],'',''],
-      ['处理结果','','',''],
-      ['向举报人反馈情况','','',''],
-      ['备注','','','']
+      // ['编号',dateStr+'001'],
+      ['举报日期',record.data.reportTime],
+      ['举报人及电话',record.data.reporterName+'  '+record.data.reporterPhone],
+      ['举报内容',[record.data.reportProblem,'  ','图片 '+fileIDs.length+' 张']],
+      ['违法行为发生地',[record.data.reportLocation,'经度：'+record.data.longitude+ ' 纬度：'+record.data.latitude]],
+      ['受理机构','     案件受理科'+'         '+'受理日期:                            '],
+      ['案件受理科意见',''],
+      ['分管队长意见',''],
+      // ['现场核查情况',['现场核查日期：     年    月    日 至       年    月    日 ', '附核查材料：     件     页    份（照片或图件     张）'],'',''],
+      ['现场核查情况',''],
+      ['处理结果',''],
+      ['向举报人反馈情况',''],
+      ['备注','']
     ]
     
     var tableStyle = {
-      tableColWidth: 4261,
-      tableSize: 18,
-      tableColor: "ada",
-      tableAlign: "left",
+      // tableColWidth: 4261,
+      tableSize: 20,
+      // tableColor: "ada",
+      tableAlign: "center",
       tableFontFamily: "Comic Sans MS",
       spacingBefor: 100, // default is 100
       spacingAfter: 100, // default is 100
-      spacingLine: 140, // default is 240
+      spacingLine: 300, // default is 240
       spacingLineRule: 'atLeast', // default is atLeast
-      indent: 300, // table indent, default is 0
-      fixedLayout: true, // default is false
+      indent: 10, // table indent, default is 0
+      fixedLayout: false, // default is false
       borders: true, // default is false. if true, default border size is 4
-      borderSize: 4, // To use this option, the 'borders' must set as true, default is 4
-      columns: [{ width: 1122 }, {width:4261}, { width: 1122 }, {width:4261}], // Table logical columns
+      borderSize: 10, // To use this option, the 'borders' must set as true, default is 4
+      columns: [{ width: 4261}, {width:8522}], // Table logical columns
     }
-
+    
     docx.createTable (table, tableStyle);
 
     let out = fs.createWriteStream('/tmp/'+record.data._id+'.docx');
@@ -154,10 +155,11 @@ exports.main = async (event, context) => {
           // 发件人
           from: '<1014091930@qq.com>',
           // 主题
-          subject: '测试举报邮件发送',
+          subject: ''+record.data.area,
           // 收件人
-           to: to,
-          //to: '377591031@qq.com;1014091930@qq.com',
+          to: to,
+          // to: '377591031@qq.com;1014091930@qq.com',
+          // to: '1014091930@qq.com',
           // 邮件内容，text或者html格式
           text: '附件为举报上传图片', //可以是链接，也可以是验证码
           attachments: tempFiles

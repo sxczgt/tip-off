@@ -7,6 +7,10 @@
    top: 0;left: 0;right: 0;bottom: 0;
 }
 
+.center{
+  text-align: center;
+}
+
 .logo-head{
   width:100%;
   height:70px;
@@ -21,9 +25,14 @@
     margin-bottom: -20px;
 }
 
-.form-text{
+.form-text-of{
      font-size: 36rpx;
      margin:0px 8px 0px 8px;
+     text-indent: 2em;
+}
+.form-text{
+  font-size: 36rpx;
+  margin:0px 8px 0px 8px;
 }
 
 .btn-area {

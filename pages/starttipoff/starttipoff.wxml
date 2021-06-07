@@ -3,40 +3,30 @@
     <image src="../../images/1.jpg" mode='widthFix' style='width:100%;high:80%'></image>
   </view> -->
   <form bindsubmit="MyfromSubmit" report-submit="true">
-    <view class="form-head">
-    <label> 网上举报须知</label>
+    <text> \n </text>
+    <text> \n </text>
+    <text> \n </text>
+    <view class="center">
+    <label> 举报须知</label>
     </view>
     <text> \n </text>
     <view class="form-text">
-      <label>一、受理举报范围：</label>
+      <label>▶ 受理范围：</label>
     </view>
-    <view class="form-text">
+    <view class="form-text-of">
       <label>长治市辖区内兽医兽药、饲料及饲料添加剂、动物卫生监督、种畜禽、生猪屠宰、农作物种子、肥料、农药、农机、渔政、农产品质量安全、农业转基因生物安全、植物检疫、野生植物保护等涉农违法违规行为。
       </label>
     </view>
+    <text> \n </text>
     <view class="form-text">
-      <label>、注意事项：</label>
+      <label>▶ 注意事项：</label>
     </view>
-    <view class="form-text">
-      <label>1、请您自觉遵守中华人民共和国宪法和法律。
+    <view class="form-text-of">
+      <label>    举报应当实事求是，如实提供被举报人的有关情况和违法违规事实,提倡实名举报。
       </label>
     </view>
-    <view class="form-text">
-      <label>2、您应对举报内容更多真实性、客观性负责，不得捏造事实、制造假证、诬告陷害他人，借举报诬告陷害他人，会受到严肃处理，甚至会被追究法律责任。
-      </label>
-    </view>
-    <view class="form-text">
-      <label>3、举报应当实事求是，如实提供被举报人的有关情况和违法违规事实。
-      </label>
-    </view>
-    <view class="form-text">
-      <label>4、提倡实名举报。进行实名举报的，请详细填写联系电话等项目。
-      </label>
-    </view>
-    <view class="form-text">
-      <label>5、请不要重复举报。
-      </label>
-    </view>
+    <text> \n </text>
+    <text> \n </text>
     <text> \n </text>
     <view class="check-box" style='margin-bottom:15px;margin-left:8px;'>
         <checkbox id="check1" name="check1" checked="{{term_checked}}" bindtap="onCheckboxChanged">我已阅读以上条款</checkbox>

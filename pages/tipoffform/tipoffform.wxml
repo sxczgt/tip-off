@@ -42,7 +42,7 @@
 						<input name="reportTime" type='text' value="{{time}}" disabled="disabled"></input>
 					</view>
 				</view>
-				<view class="tr bg-w">
+				<!-- <view class="tr bg-w">
 					<view class="th1">举报类型<text style='color:red'>*</text></view>
 					<view class="th">
 						<picker mode="selector" value="{{indexPolitic}}" range="{{arrayPolitic}}" bindchange="bindPoliticChange">
@@ -51,7 +51,7 @@
 							</view>
 						</picker>
 					</view>
-				</view>
+				</view> -->
 				<view class="tr bg-w">
 					<view class="th1">电话<text style='color:red'>*</text></view>
 					<view class="th">
@@ -64,21 +64,7 @@
 						<input name="reporterName" value="{{report.reporterName}}" bindinput="reporterNameInput"></input>
 					</view>
 				</view>
-				<!-- 文件上传 -->
-			
-				<view class="conts">
- 				 	<view class="img_box">
-    					<view class="imgs" wx:for="{{tempFilePaths}}" wx:key="index">
-      						<image src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}" mode='widthFix' />
-    					</view>
-    				<view class="imgs">
-      					<view class="images" bindtap="chooseImageTap">
-        					<image src='../../images/timg.jpg' mode='widthFix' />
-						</view>
-					</view>
-				</view>
-				<view class="upload-img">上传图片</view>
-			</view>
+
 		</view>
 		</view>
 		<view class="form_title_white1"></view>
@@ -106,7 +92,23 @@
 					</view>
 				</view>
 			</view>
+			
 		</view>
+			<!-- 文件上传 -->
+			
+			<view class="conts">
+ 				 	<view class="img_box">
+    					<view class="imgs" wx:for="{{tempFilePaths}}" wx:key="index">
+      						<image src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}" mode='widthFix' />
+    					</view>
+    				<view class="imgs">
+      					<view class="images" bindtap="chooseImageTap">
+        					<image src='../../images/timg.jpg' mode='widthFix' />
+						</view>
+					</view>
+				</view>
+				<view class="upload-img">上传图片</view>
+			</view>
 		<view class="btn-area" style="display:{{isDetails}}">
 			<button class='tipoffbtn' formType="submit">
 				<text decode="{{true}}">提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</text>
